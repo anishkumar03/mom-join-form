@@ -321,9 +321,9 @@
           </div>
         </div>
 
-        <!-- Phone -->
+        <!-- WhatsApp -->
         <div class="form-group">
-          <label>Phone <span class="opt">(optional)</span></label>
+          <label>WhatsApp Number <span class="req">*</span></label>
           <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
         </div>
 
@@ -420,7 +420,7 @@
 
   <script>
     const SUPABASE_URL  = 'https://bnhcjyiccepaicexhuez.supabase.co'
-    const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJuaGNqeWljY2VwYWljZXhodWV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzExMTY1NTQsImV4cCI6MjA4NjY5MjU1NH0.gBDVJRp_dZ_6ErGWN7S9H9WLuDOXPEo8hGtUyPuiObQ'
+    const SUPABASE_ANON = 'eyJhbGci••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••'
 
     let selectedMarket   = ''
     let selectedExp      = ''
@@ -465,6 +465,7 @@
 
       if (!full_name)      return showError('Please enter your full name.')
       if (!email)          return showError('Please enter your email.')
+      if (!phone)          return showError('Please enter your WhatsApp number.')
       if (!selectedMarket) return showError('Please select the market you trade.')
       if (!selectedExp)    return showError('Please select your experience level.')
       if (!selectedMentor) return showError('Please select a mentorship type.')
@@ -490,7 +491,7 @@
             full_name,
             name:            full_name,
             email:           email.toLowerCase(),
-            phone:           phone || null,
+            phone:           phone,
             market:          selectedMarket,
             experience:      selectedExp,
             program:         selectedMentor,
